@@ -6,6 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>nexus-log-app</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Added custom styles for the new UI components -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      
+      #nexus-log-root {
+        font-family: 'Press Start 2P', cursive;
+        -webkit-font-smoothing: none;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeSpeed; /* or optimizeLegibility */
+      }
+
+      /* Pixelated border style for the new stat boxes */
+      .pixel-border {
+        border-style: solid;
+        border-width: 4px;
+        border-image-slice: 2;
+        border-image-width: 2;
+        border-image-repeat: stretch;
+        border-image-source: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 6 6" style="enable-background:new 0 0 6 6;" xml:space="preserve"><path d="M2,0H4V2H2V0Z M0,2H2V4H0V2Z M4,2H6V4H4V2Z M2,4H4V6H2V4Z" fill="rgb(251, 191, 36)"/></svg>');
+        border-image-outset: 2;
+        position: relative;
+        background-color: #1f2937; /* bg-gray-800 */
+      }
+
+       /* Style for the health/stat bar */
+      .hp-bar {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        border-radius: 2px;
+        height: 8px;
+      }
+      .hp-bar-inner {
+        transition: width 0.5s ease-in-out;
+        border-radius: 2px;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
