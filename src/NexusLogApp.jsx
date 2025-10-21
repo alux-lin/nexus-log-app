@@ -72,7 +72,8 @@ const NexusLogApp = () => {
 
   return (
     <div id="nexus-log-root">
-        <div className={`min-h-screen ${JRPG_THEME.containerBg} ${JRPG_THEME.textSecondary} p-4 sm:p-8 font-mono`}>
+        {/* The main font is now controlled by the style tag in index.html */}
+        <div className={`min-h-screen ${JRPG_THEME.containerBg} ${JRPG_THEME.textSecondary} p-4 sm:p-8`}>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             <CharacterSheet
               characterData={{ name: displayData.characterName, characterClass: displayData.characterClass, level: displayData.level }}
@@ -86,7 +87,6 @@ const NexusLogApp = () => {
               setCurrencies={setCurrencies}
               isReadOnly={isReadOnly}
             />
-            {/* 🎯 FIXED: Passing the correct props to the Sidebar component */}
             <Sidebar
               quests={displayData.quests}
               setQuests={setQuests}
@@ -104,4 +104,3 @@ const NexusLogApp = () => {
 };
 
 export default NexusLogApp;
-
